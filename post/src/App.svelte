@@ -68,6 +68,18 @@
         from the real sound. The encoder's whole trick is to repeat two moves,
         <em>find patterns, then shrink</em>.
       </p>
+      <p class="standfirst">
+        One caveat up front: the encoder here is a <em>miniature</em>, trained from
+        scratch on just these few clips so every number stays small enough to watch.
+        The real LAION-CLAP runs far heavier machinery: a Swin vision transformer
+        (HTSAT) reads the spectrogram for audio, RoBERTa handles the text, and it
+        learns from hundreds of thousands of audio-caption pairs. This page keeps
+        CLAP's exact recipe (spectrogram → encode → pool → project to 512 → normalise
+        → compare by cosine) but swaps those encoders for plain convolutions and a
+        tiny word-level transformer. Every step's shape is real and computed live;
+        only the scale and the architecture are toy. The one piece of the genuine
+        model on this page is the opening sphere: 2,600 real LAION-CLAP embeddings.
+      </p>
       <div class="alsosee">
         <p class="also-label mono">Also see</p>
         <ul>
