@@ -68,16 +68,6 @@
         from the real sound. The encoder's whole trick is to repeat two moves,
         <em>find patterns, then shrink</em>.
       </p>
-      <p class="standfirst">
-        The recordings come from two companion projects.
-        <a href="https://adamsohn.com/separate/">separate</a> is an interactive
-        explainer of audio source separation: it pulls a clean diagnostic sound out of
-        a recording tangled with music and speech, which is how the three demo clips
-        were isolated. The
-        <a href="https://github.com/adam-s/car-diagnosis/">car-diagnosis corpus</a> is
-        a labelled collection of real engine-fault recordings scraped from the web, and
-        a few thousand of its embeddings make up the opening sphere.
-      </p>
     </header>
 
     <Section eyebrow="Pick a sound" title="The car-diagnosis clips">
