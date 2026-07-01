@@ -68,12 +68,15 @@
         from the real sound. The encoder's whole trick is to repeat two moves,
         <em>find patterns, then shrink</em>.
       </p>
-      <p class="sources">
-        The recordings come from two companion projects:
-        <a href="https://adamsohn.com/separate/">separate</a>, which isolates a clean
-        diagnostic clip from a noisy one, and the
-        <a href="https://github.com/adam-s/car-diagnosis/">car-diagnosis corpus</a> of
-        real engine faults that fills the opening sphere.
+      <p class="standfirst">
+        The recordings come from two companion projects.
+        <a href="https://adamsohn.com/separate/">separate</a> is an interactive
+        explainer of audio source separation: it pulls a clean diagnostic sound out of
+        a recording tangled with music and speech, which is how the three demo clips
+        were isolated. The
+        <a href="https://github.com/adam-s/car-diagnosis/">car-diagnosis corpus</a> is
+        a labelled collection of real engine-fault recordings scraped from the web, and
+        a few thousand of its embeddings make up the opening sphere.
       </p>
     </header>
 
@@ -189,7 +192,6 @@
   .dek { margin: 2px 0 0; color: var(--ink-dim); font-size: 1.24rem; font-style: italic; font-family: var(--font-serif); }
   .standfirst { color: var(--ink-dim); font-size: 1.12rem; line-height: 1.65; max-width: 60ch; margin: var(--space-xs) 0 0; }
   .standfirst em { color: var(--ink); font-style: italic; }
-  .sources { margin: var(--space-xs) 0 0; color: var(--ink-faint); font-size: 0.92rem; line-height: 1.6; max-width: 60ch; }
   .steps {
     display: flex; flex-direction: column;
     width: min(900px, 94vw);
