@@ -68,6 +68,28 @@
         from the real sound. The encoder's whole trick is to repeat two moves,
         <em>find patterns, then shrink</em>.
       </p>
+      <div class="alsosee">
+        <p class="also-label mono">Also see</p>
+        <ul>
+          <li>
+            <a href="https://adamsohn.com/separate/"><strong>Isolating the engine
+            audio</strong></a> — an interactive, scroll-driven tutorial. It takes a
+            real recording where the engine is mixed in with music, a voice talking
+            over it, or street noise, and pulls out just the diagnostic engine sound.
+            The whole separation pipeline runs live (waveform → spectrogram, source
+            separation, speech detection), and the clean, isolated clip drops out at
+            the end.
+          </li>
+          <li>
+            <a href="https://github.com/adam-s/car-diagnosis/"><strong>car-diagnosis</strong></a>
+            — the repo behind the opening sphere: an end-to-end system that turns a
+            shaky phone clip of a rattling car into a named fault. It scrapes fault
+            recordings off the web, cleans them, embeds them with CLAP, trains
+            classifiers on those embeddings, and serves an inference page where you
+            drop in a recording and it tells you what's wrong.
+          </li>
+        </ul>
+      </div>
     </header>
 
     <Section eyebrow="Pick a sound" title="The car-diagnosis clips">
@@ -182,6 +204,11 @@
   .dek { margin: 2px 0 0; color: var(--ink-dim); font-size: 1.24rem; font-style: italic; font-family: var(--font-serif); }
   .standfirst { color: var(--ink-dim); font-size: 1.12rem; line-height: 1.65; max-width: 60ch; margin: var(--space-xs) 0 0; }
   .standfirst em { color: var(--ink); font-style: italic; }
+  .alsosee { margin-top: var(--space-lg); max-width: 62ch; }
+  .also-label { margin: 0 0 8px; color: var(--ink-faint); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .alsosee ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 10px; }
+  .alsosee li { color: var(--ink-dim); font-size: 1rem; line-height: 1.6; }
+  .alsosee li strong { font-weight: 600; }
   .steps {
     display: flex; flex-direction: column;
     width: min(900px, 94vw);
