@@ -1,0 +1,19 @@
+# dependencies / builds
+node_modules/
+dist/
+.vite/
+.svelte-kit/
+
+# python
+.venv/
+__pycache__/
+*.py[cod]
+
+# os / editor
+.DS_Store
+*.log
+*.tmp
+
+# local scratch / snapshots
+.snapshots/
+scratchpad/

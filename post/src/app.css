@@ -1,0 +1,81 @@
+@import 'katex/dist/katex.min.css';
+
+:root {
+  /* Type — matches grpo / separate (adamsohn.com house style); webfonts loaded */
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  /* Light paper palette (grpo-aligned) */
+  --bg: #fdfcf9;
+  --panel: #f7f5f0;
+  --panel-2: #f0ede5;
+  --line: #e8e4dc;
+  --line-strong: #d8d2c4;
+  --ink: #1a1a1a;
+  --ink-dim: #5a5a5a;
+  --ink-faint: #9a9a9a;
+  --accent: #1f3a5f;        /* navy — output Y, UI accent */
+  --accent-hover: #2d4a73;
+
+  /* ONE colour language, start to finish:
+     · data / activations  → magma heatmaps + warm `--data` symbols
+       (mel, spectrum, every conv map, pooled z, hidden h, embedding)
+     · learned weights      → blue-red diverging heatmaps + cool `--weight` symbols
+       (kernel K, projection W, mel filterbank M, bias)
+     · UI focus             → navy `--accent` (current cell, window, active term) */
+  --data: #b8551f;          /* warm — activations (matches magma) */
+  --weight: #3b6ea5;        /* cool — learned weights (matches diverging) */
+  --x-color: var(--data);   /* X is an activation */
+  --y-color: var(--data);   /* Y is an activation */
+  --k-color: var(--weight); /* K is a weight */
+  --accent-text: var(--accent);
+  --pos: #b0423e;
+  --neg: #2f6db0;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  --maxw: 640px;
+
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+
+body {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+  /* clearance for the fixed FooterBar */
+  padding-bottom: calc(58px + env(safe-area-inset-bottom));
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+a { color: var(--accent); }
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+::selection { background: rgba(31, 58, 95, 0.14); }

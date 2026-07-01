@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CLAP">
+  <!-- a miniature of the embedding nebula: real-CLAP points on one sphere -->
+  <circle cx="16" cy="10.2" r="3.3" fill="#b8551f"/>
+  <circle cx="21.7" cy="12.8" r="2.4" fill="#e0912f"/>
+  <circle cx="10.3" cy="13.8" r="2.7" fill="#2f7d78"/>
+  <circle cx="23.2" cy="18.4" r="1.9" fill="#9c6b2f" opacity="0.9"/>
+  <circle cx="16" cy="16.6" r="2.2" fill="#c25e4a" opacity="0.85"/>
+  <circle cx="11.6" cy="21.2" r="2.5" fill="#3b6ea5"/>
+  <circle cx="20.2" cy="21.6" r="3.0" fill="#8a4b6b"/>
+</svg>
