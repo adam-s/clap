@@ -5,13 +5,17 @@
   // KaTeX (~268 kB) is code-split out of the initial bundle and loaded on mount;
   // every formula sits below the fold, so nothing renders late that the reader sees.
   import { onMount } from 'svelte';
-  import 'katex/dist/katex.min.css';
 
   type Props = { tex: string; displayMode?: boolean; active?: string | null };
   let { tex, displayMode = false, active = null }: Props = $props();
 
+  // Both the KaTeX engine (~268 kB) and its CSS (~23 kB) are code-split out of the
+  // initial payload and loaded together on mount; every formula sits below the fold.
   let katex = $state<typeof import('katex').default | null>(null);
-  onMount(async () => { katex = (await import('katex')).default; });
+  onMount(async () => {
+    const [mod] = await Promise.all([import('katex'), import('katex/dist/katex.min.css')]);
+    katex = mod.default;
+  });
 
   const html = $derived(
     katex

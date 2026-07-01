@@ -343,16 +343,14 @@ def main():
     # is just the demo index (slug/file/caption); full activations stay server-side.
     clips_slim = [{"slug": c["slug"], "file": c["file"], "caption": c["caption"]} for c in clips_out]
     (OUT_DIR / "clips.json").write_text(json.dumps(clips_slim))
-    (OUT_DIR / "clips_full.json").write_text(json.dumps(clips_out))
     (OUT_DIR / "text.json").write_text(json.dumps(text_out))
     (OUT_DIR / "similarity.json").write_text(json.dumps({
         "slugs": slugs, "captions": captions,
         "cosine": np.round(sim, 4).tolist(),
         "probs": np.round(probs, 4).tolist(),
     }))
-    (OUT_DIR / "train_trajectory.json").write_text(json.dumps({
-        "slugs": slugs, "captions": captions, "snapshots": traj,
-    }))
+    # NOTE: clips_full.json and train_trajectory.json are intentionally NOT written —
+    # the browser recomputes every stage live, so they were dead weight in the payload.
 
     total = sum(len(json.dumps(x)) for x in [clips_out, text_out, meta, traj])
     print(f"\nwrote {OUT_DIR}")
