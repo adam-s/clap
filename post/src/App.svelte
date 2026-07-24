@@ -64,8 +64,8 @@
         512 numbers. Two fingerprints that <em>point the same way</em> count as a
         match, even when the numbers differ. This page follows one engine recording
         through every operation that builds its fingerprint, then does the same for
-        the words and measures the match. Every value is computed live in your browser
-        from the real sound. The encoder's whole trick is to repeat two moves,
+        the words and measures the match. Every value shown is a real number the
+        encoder produces from that sound. The encoder's whole trick is to repeat two moves,
         <em>find patterns, then shrink</em>.
       </p>
       <p class="standfirst">
@@ -76,7 +76,7 @@
         learns from hundreds of thousands of audio-caption pairs. This page keeps
         CLAP's exact recipe (spectrogram → encode → pool → project to 512 → normalise
         → compare by cosine) but swaps those encoders for plain convolutions and a
-        tiny word-level transformer. Every step's shape is real and computed live;
+        tiny word-level transformer. Every step's shape is real;
         only the scale and the architecture are toy. The one piece of the genuine
         model on this page is the opening sphere: 2,600 real LAION-CLAP embeddings.
       </p>
@@ -88,7 +88,7 @@
             audio</strong></a> — an interactive, scroll-driven tutorial. It takes a
             real recording where the engine is mixed in with music, a voice talking
             over it, or street noise, and pulls out just the diagnostic engine sound.
-            The whole separation pipeline runs live (waveform → spectrogram, source
+            It walks the whole separation pipeline (waveform → spectrogram, source
             separation, speech detection), and the clean, isolated clip drops out at
             the end.
           </li>
@@ -107,9 +107,8 @@
     <Section eyebrow="Pick a sound" title="The car-diagnosis clips">
       <Prose>
         <p>
-          Choose an engine sound — or drop in your own clip. It's decoded and run
-          through the encoder right here; every step below shows the real values
-          for whatever you pick.
+          Choose an engine sound — or drop in your own clip. Every step below shows
+          the real values the encoder produces for whatever you pick.
         </p>
       </Prose>
       <ClipPicker clips={bundle.clips} />
@@ -157,8 +156,7 @@
       <Prose>
         <p>
           Now the two encoders can finally talk. The sound and every label are points
-          in one space, so the match is just the angle between them: one dot product,
-          computed live.
+          in one space, so the match is just the angle between them: one dot product.
         </p>
       </Prose>
       {#if active}
